@@ -1,0 +1,186 @@
+<html>
+	<head>
+		<style>
+			.my-class {
+				color: red;
+			}
+		</style>
+		<script>
+			function changeText(id) {
+				var element = document.getElementById(id);
+				element.innerHTML = "Ku-ku! And i'm <b>bold</b>";
+			}
+			
+			function changeTextH3(id) {
+				var element = document.getElementById(id);
+				element.innerHTML = "<h3>A paragraph turned into a h3!</h3>"
+			}
+			
+			function changeTextOuter(id) {
+				var element = document.getElementById(id);
+				element.outerHTML = "<h3 id='t3'>" + element.innerHTML + "</h3>";
+			}
+			
+			function numberAdd(num1, num2, result1) {
+				var element1 = document.getElementById(num1);
+				var element2 = document.getElementById(num2);
+				var elementR = document.getElementById(result1);
+				
+				var sum = Number(element1.value) + Number(element2.value);
+				
+				elementR.innerHTML = sum;
+			}
+			
+			function changeTextByTagName() {
+				var elements = document.getElementsByTagName('p');
+				for (var i = 0; i < elements.length; i++){
+					elements[i].innerHTML = 'Ку-ку!';
+				}
+			}
+			
+			function changeTextByClassName() {
+				var elements = document.getElementsByClassName('www');
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = i + 1;
+				}
+			}
+			
+			function changeTextByQuerySelectorAll() {
+				var elements = document.querySelectorAll('p.www');
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = i + 1;
+				} 
+			}
+			
+			function bringClass(id) {
+				var element = document.getElementById(id);
+				alert(element.getAttribute('class'));
+			}
+			
+			function eraseClass(id) {
+				var element = document.getElementById(id);
+				element.setAttribute('class', 'new-class');
+				alert('Class changed! Press the first to check it out!');
+			}
+			
+			function writeText(elem) {
+				var element = document.getElementById('t8');
+				element.innerHTML = elem.value;
+			}
+			
+			function addLinks() {
+				var elements = document.getElementsByTagName('a');
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = elements[i].innerHTML + "(" + elements[i].getAttribute('href') + ")";
+				}
+			}
+			
+			function changeTextButton(element) {
+				var elem = document.getElementById('t9');
+				element.disabled = true;
+				element.setAttribute('value','Oh, I can no longer click!');
+				elem.innerHTML = 'Hello, World!';
+				elem.style.color = 'red';
+			}
+			
+			function changeParOnNumber() {
+				var elements = document.getElementsByClassName('ttt');
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = i;
+				}
+			}
+			
+			function addForParNumber() {
+				var elements = document.getElementsByClassName('lll');
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = i + "." + elements[i].innerHTML;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<p id="t1">When you press the button the text in the paragraph will change.</p>
+		<input type="submit" value="Click Me!" onclick="changeText('t1')">
+		<br><br>
+		
+		<p id="t2">When you press the button the text in the paragraph will change.</p>
+		<input type="submit" value="Click Me!" onclick="changeTextH3('t2')">
+		<br><br>
+		
+		<p id="t3">When you click on button the paragraph will be h3, but the text will remain.</p>
+		<input type="submit" value="Click Me!" onclick="changeTextOuter('t3')">
+		<br><br>
+		
+		<input type="text" id="num1"> + <input type="text" id="num2"> = <span id="result1">?</span>
+		<input type="submit" value="Click to add" onclick="numberAdd('num1','num2','result1')">
+		<br><br>
+		
+		<p>When you press the button the text in the paragraph will change.</p>
+		<p>When you press the button the text in the paragraph will change.</p>
+		<p>When you press the button the text in the paragraph will change.</p>
+		<p>When you press the button the text in the paragraph will change.</p>
+		<h2>h2 and I will not change</h2>
+		<input type="submit" value="Click Me!" onclick="changeTextByTagName()">
+		<br><br>
+		
+		<h2 class="www">Заголовок с классом www.</h2>
+		<p class="www">Абзац с классом www.</p>
+		<p class="www">Абзац с классом www.</p>
+		<p>Просто абзац, не поменяется.</p>
+		<input type="submit" value="Click Me!" onclick="changeTextByClassName()">
+		<br><br>
+		
+		<h2 class="www">Заголовок с классом www, не поменяется.</h2>
+		<p class="www">Абзац с классом www.</p>
+		<p class="www">Абзац с классом www.</p>
+		<p class="www">Абзац с классом www.</p>
+		<p>Просто абзац, не поменяется.</p>
+		<input type="submit" value="Click Me!" onclick="changeTextByQuerySelectorAll()">
+		<br><br>
+		
+		<p id = "t5" class="my-class">Paragraph with class="my-class"</p>
+		<input type="submit" value="Сlick I will bring the class to a paragraph" onclick="bringClass('t5')">
+		<br><br>
+		
+		<p id = "t6" class="my-class class">A paragraph with class="my-class class". Class "my-class" specifies the color red."</p>
+		<input type="submit" value="Сlick I will bring the class to a paragraph" onclick="bringClass('t6')">
+		<input type="submit" value="Click - and I will change the class attribute to the paragraph on 'new-class'" onclick="eraseClass('t6')">
+		<br><br>
+		
+		<input type="text" placeholder="Enter your text!" id="t7" onkeyup="writeText(this)">
+		<span id="t8"></span>
+		<br><br>
+		
+		<p><a href="http://google.com">link 1</a></p>
+		<p><a href="http://tut.by">link 2</a></p>
+		<p><a href="http://yandex.ru">link 3</a></p>
+		<input type='submit' value='Click Me!' onclick='addLinks()'>
+		<br><br>
+		
+		<p id='t9'>When you press the button the text in the paragraph will change.</p>
+		<input type="submit" value="Click Me!"  onclick="changeTextButton(this)">
+		<br><br>
+		
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<p class='ttt'>Paragraph with text</p>
+		<input type='submit' value="Click Me!" onclick='changeParOnNumber()'>
+		<br><br>
+		
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<p class='lll'>Paragraph with text</p>
+		<input type='submit' value="Click Me!" onclick='addForParNumber()'>
+		<br><br>
+	</body>
+</html>

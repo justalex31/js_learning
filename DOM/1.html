@@ -1,0 +1,273 @@
+<html>
+	<head>
+		<!--<script>
+			function clickButton() {
+				var element = document.getElementById("test");
+				element.value = "!!!";
+			}
+			
+			function func1() {
+				var element = document.getElementById("test1");
+				alert(element.value);
+			}
+			
+			function quad() {
+				var element = document.getElementById("test2");
+				alert(Math.pow(Number(element.value), 2));
+			}
+			
+			function change() {
+				var element1 = document.getElementById("test3");
+				var element2 = document.getElementById("test4");
+				
+				var a = element1.value;
+				element1.value = element2.value;
+				element2.value = a;
+			}
+			
+			function changeNameButton(element) {
+				element.value = "New name the button";
+			}
+			
+			function changeColorText(id) {
+				var element = document.getElementById(id);
+				//alert(element.value);
+				element.style.color = 'red';
+			}
+			
+			function onblock(id) {
+				var element = document.getElementById(id);
+				element.disabled = true;
+			}
+			
+			function offblock(id) {
+				var element = document.getElementById(id);
+				element.disabled = false;
+			}
+		</script>-->
+		<script>
+			function out(id) {
+				var element = document.getElementById(id);
+				alert(element.value);
+			}
+			
+			function changeTextField(id) {
+				var element = document.getElementById(id);
+				element.value = "Ops, i change my text"
+			}
+			
+			function changeTextField(element) {
+				element.value = "Ops, i change my text"
+			}
+			
+			function changePhoto(id) {
+				var element = document.getElementById(id);
+				element.src = "http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/2.jpg";
+			}
+			
+			function clicker(element) {
+				alert("hello");
+			}
+			
+			function changeTextField(element) {
+				element.value = "Ops, i change my text"
+			}
+			
+			function changeTextFieldAgain(element) {
+				element.value = "Ops, i change my text again!!!"
+			}
+			
+			function changeNameButton(element) {
+				element.value = "Ku-Ku";
+			}
+			
+			function changeStateButton(element) {
+				element.disabled = true;
+			}
+			
+			function changePhoto(element) {
+				element.src = "http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/2.jpg";
+			}
+			
+			function changePhotoAgain(element) {
+				element.src = "http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/1.jpg";
+			}
+			
+			function greatTextField(id) {
+				var element = document.getElementById(id);
+				element.style.width = '200px';
+				element.style.color = 'red';
+			}
+			
+			function invisib(id) {
+				var element = document.getElementById(id);
+				element.style.display = 'none';
+			}
+			
+			function invisibA(id) {
+				var element = document.getElementById(id);
+				element.style.display = 'inline-block';
+			}
+			
+			function changeForm(id) {
+				var element = document.getElementById(id);
+				element.value = 'Ops i change the text and css';
+				element.style.color = 'red';
+				element.style.borderRadius = '10px';
+				element.style.width = '400px';
+				element.style.height = '250px';
+			}
+			
+			function pressJ(id, idd) {
+				var element = document.getElementById(id);
+				element.disabled = true;
+				element.value = "o, you can't press on my";
+				var element2 = document.getElementById(idd);
+				element.disabled = false;
+			}
+			
+			function unpressJ(id, idd) {
+				var element = document.getElementById(id);
+				element.disabled = true;
+				var element2 = document.getElementById(id);
+				element.disabled = false;
+				element2.value = "You can press on my";
+			}
+			
+			var count = 0;
+			
+			function countPress(element) {
+				count++;
+				element.value = count;
+			}
+			
+			function changeStateMouse(element) {
+				element.disabled = true;
+				element.style.cursor = 'not-allowed';
+			}
+			
+			function EdText(element) {
+				var element1 = document.getElementById("textfield");
+				//alert(element.value.substr(-1));
+				element1.value = element1.value + element.value.substr(-1);
+			}
+		</script>
+	</head>
+	<body>
+		<!--<input type="submit" onclick="alert('Hello!')" value="ClickMe">
+		<br><br>
+	
+		<input type="submit" onclick="clickButton()" value="ClickMe">
+		<input type="text" value="???" id="test">
+		<br><br>
+		
+		<input type="submit" onclick="func1()" value="ClickMe">
+		<input type="text" value="???" id="test1">
+		<br><br>
+		
+		<input type="submit" onclick="quad()" value="ClickMe">
+		<input type="text" placeholder="¬ведите число" id="test2">
+		<br><br>
+		
+		<input type="submit" onclick="change()" value="ClickMe">
+		<input type="text" value="???" id="test3">
+		<input type="text" value="!!!" id="test4">
+		<br><br>
+		
+		<input type="submit" onclick="changeNameButton(this)" value="ClickMe">
+		<br><br>
+		
+		<input type="submit" onclick="changeColorText('test5')" value="ClickMe">
+		<input type="text" value="Hello, World!" id="test5">
+		<br><br>
+		
+		<input type="submit" onclick="offblock('test6')" value="OffBlock">
+		<input type="submit" onclick="onblock('test6')" value="OnBlock">
+		<input type="text" value="Hello, World!" id="test6">
+		<br><br>-->
+		<input type="submit" value="ClickMe" onmouseover="alert('Hello')">
+		<br><br>
+		
+		<input type="submit" value="Double Click Me" ondblclick="alert('Hello')">
+		<br><br>
+		
+		<input type="submit" value="Out mouse" onmouseout="alert('Hello')">
+		<br><br>
+		
+		<input type="submit" value="Click Me!" onclick="out('t1')">
+		<input type="text" value="Ku-Ku" id="t1">
+		<br><br>
+		
+		<input type="submit" value="Click Me!" onclick="changeTextField('t2')">
+		<input type="text" value="Ku-Ku" id="t2">
+		<br><br>
+		
+		<img id="t3" src="http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/1.jpg">
+		<input type="submit" value="Change Photo!" onclick="changePhoto('t3')">
+		<br><br>
+		
+		<input type="text" value="Click Me!" onfocus="clicker(this)">
+		<br><br>
+		
+		<input type="text" value="Click Me!" onclick="changeTextField(this)">
+		<br><br>
+		
+		<input type="text" value="Hello" onfocus="changeTextField(this)" onblur="changeTextFieldAgain(this)">
+		<br><br>
+		
+		<p>Это input type="submit".</p>
+		<input type="submit" value="Click Me!" onclick="changeNameButton(this)">
+		<br><br>
+		
+		<p>Это input type="submit".</p>
+		<input type="submit" value="Click Me!" onclick="changeStateButton(this)">
+		<br><br>
+		
+		<img src="http://theory.phphtml.net/exercises/javascript/dom/osnovy-raboty-s-dom-v-javascript/2/3/1.jpg" onmouseover="changePhoto(this)" onmouseout="changePhotoAgain(this)">
+		<br><br>
+		
+		<input type="submit" value="ClickMe" onclick="greatTextField('t4')">
+		<input type="text" value="Ku-Ku" id="t4">
+		<br><br>
+		
+		<input type="submit" value="Click Me Now" onclick="invisib('t5')">
+		<input type="submit" value="Click Me Then" onclick="invisibA('t5')">
+		<input type="text" value="Ku-Ku" id="t5">
+		<br><br>
+
+		<input type="text" value="Ku-Ku" id="t6">
+		<input type="submit" value="ClickMe" onclick="changeForm('t6')"> 
+		<br><br>
+		
+		<p>Это input type="submit".</p>
+		<input type="submit" value='Click Me' id='t7' onclick="pressJ('t7','t8')">
+		<input type="submit" value='Un Block the button' id='t8' disabled onclick="unpressJ('t8', 't7')">
+		<br><br>
+		
+		<p>Кнопка считает кол-во нажатий по ней.</p>
+		<input type = "submit" value='0' id='t10' onclick="countPress(this)">
+		<br><br>
+		
+		<p>Обратите внимание на курсор в различных состояниях.</p>
+		<input type="submit" onclick="changeStateMouse(this)" value="Click Me!">
+		<br><br>
+		
+		<input type="text" id='textfield'>
+		<br><br>
+		<input type="submit" value="I add +" onclick="EdText(this)">
+		<input type="submit" value="I add -" onclick="EdText(this)">
+		<input type="submit" value="I add *" onclick="EdText(this)">
+		<input type="submit" value="I add /" onclick="EdText(this)">
+		<br><br>
+		<input type="submit" value="0" onclick="EdText(this)">
+		<input type="submit" value="1" onclick="EdText(this)">
+		<input type="submit" value="2" onclick="EdText(this)">
+		<input type="submit" value="3" onclick="EdText(this)">
+		<input type="submit" value="4" onclick="EdText(this)">
+		<input type="submit" value="5" onclick="EdText(this)">
+		<input type="submit" value="6" onclick="EdText(this)">
+		<input type="submit" value="7" onclick="EdText(this)">
+		<input type="submit" value="8" onclick="EdText(this)">
+		<input type="submit" value="9" onclick="EdText(this)">
+	</body>
+</html>
