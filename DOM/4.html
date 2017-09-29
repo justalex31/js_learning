@@ -1,0 +1,154 @@
+<html>
+	<head>
+		<script>
+			function changeTime() {
+				var element = document.getElementById('t1');
+				element.innerHTML = parseInt(element.innerHTML) + 1;
+			}
+			function startTime() {
+				window.setInterval(changeTime, 1000);
+			}
+			
+			function changeTimeT2() {
+				var element = document.getElementById('t2');
+				element.innerHTML = parseInt(element.innerHTML) + 1;
+			}
+			function start() {
+				window.id = window.setInterval(changeTimeT2, 1000);
+			}
+			function stop() {
+				window.clearInterval(window.id);
+			}
+			
+			function go() {
+				window.setInterval(clock, 1000);
+			}
+			function clock() {
+				var element = document.getElementById('clock');
+				var date = new Date();
+				element.innerHTML = addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + ":" + addZero(date.getSeconds());
+			}
+			function addZero(num) {
+				if (num <= 9) return "0" + num;
+				else return num;
+			}
+		
+			function startTimer() {
+				window.id = window.setInterval(timer, 1000);
+			}
+			function timer() {
+				var elem = document.getElementById('timer');
+					elem.innerHTML = parseInt(elem.innerHTML) - 1;
+				if (elem.innerHTML == 0) {
+					var at = document.getElementById('at');
+					at.style.display = 'inline-block';
+					window.clearInterval(startTimer);
+					var but = document.getElementById('but');
+					but.disabled = true;					
+				}
+			}
+		
+			var number = 1;
+		
+			function go1() {
+				window.setInterval(changeImg, 1000);
+			}
+			function changeImg() {
+				var elem = document.getElementById('img');
+				number = number % 3 + 1;
+				elem.src = 'http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/' + number + '.png';
+			}
+		
+			var num1 = 2;
+			var num2 = 3;
+			var num3 = 1;
+			function startDar() {
+				window.setInterval(carusel, 1000);
+			}
+			function carusel() {
+				var but1 = document.getElementById('but1');
+				but1.disabled = true;
+				num1 = num1 % 3 + 1;
+				var element1 = document.getElementById('img1');
+				element1.src = 'http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/' + num1 + '.png';
+				num2 = num2 % 3 + 1;
+				var element2 = document.getElementById('img2');
+				element2.src = "http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/" + num2 + ".png";
+				num3 = num3 % 3 + 1;
+				var element3 = document.getElementById('img3');
+				element3.src = "http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/" + num3 + ".png";
+			}
+			
+			function go2() {
+				window.setInterval(midnight, 1000);
+			}
+			function midnight() {
+				var now = new Date();
+				var tom = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+				var hour = document.getElementById('h');
+				var minutes = document.getElementById('m');
+				var second = document.getElementById('s');
+				var dif = tom.getTime() - now.getTime();
+				var rhours = Math.round(dif / (1000 * 60 * 60));
+				var rminutes = Math.round((dif / (1000 * 60)) % 60);
+				var rseconds = Math.round((dif / 1000) % 60);
+				hour.innerHTML = rhours;
+				minutes.innerHTML = rminutes;
+				second.innerHTML = rseconds;
+			}
+		</script>
+	</head>
+	<body  onload="go(), go1(), go2()">
+		<input type="submit" value="Click Me!" onclick="startTime()">
+		<span id='t1'>0</span>
+		<br><br>
+		
+		<input type="submit" value="Start" onclick="start()">
+		<input type="submit" value="End" onclick="stop()">
+		<span id='t2'>0</span>
+		<br><br>
+		
+		<span id="clock">00:00:00</span>
+		<br><br>
+		
+		<span id='timer'>10</span>
+		<span id='at' style='display: none'>End</span>
+		<input id='but' type='submit' value='Start timer' onclick='startTimer()'>
+		<br><br>
+		
+		<img id='img' src='http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png'>
+		<br><br>
+		
+		<img id='img1' src='http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/1.png'>
+		<img id='img2' src='http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/2.png'>
+		<img id='img3' src='http://theory.phphtml.net/exercises/javascript/dom/rabota-s-tajmerami-v-javascript/smiles/3.png'>
+		<input id='but1' type='submit' value='Start timer' onclick='startDar()'>
+		<br><br>
+		
+		<span id='midnight'>To midnight</span>
+		<table border='2px'>
+			<tr>
+				<td>
+					Hours
+				</td>
+				<td>
+					Minutes
+				</td>
+				<td>
+					Seconds
+				</td>
+			</tr>
+			<tr>
+				<td id="h">
+					0
+				</td>
+				<td id='m'>
+					0	
+				</td>
+				<td id='s'>
+					0
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
